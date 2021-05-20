@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.P05DemoRiddle">
-        <activity android:name=".AnswerActivity2"></activity>
-        <activity android:name=".AnswerActivity1" />
+        <activity android:name=".AnswerActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

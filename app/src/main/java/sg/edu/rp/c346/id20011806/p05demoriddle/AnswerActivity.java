@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class AnswerActivity1 extends AppCompatActivity {
+public class AnswerActivity extends AppCompatActivity {
 
     TextView tvAnswer;
 
@@ -19,7 +19,17 @@ public class AnswerActivity1 extends AppCompatActivity {
         tvAnswer.setText("In Second Activity");
         Intent intentReceived = getIntent();
         String questionsSelected = intentReceived.getStringExtra("Question");
-        tvAnswer.setText(questionsSelected + " answer is: Queue");
+        //Create 2 intents to receive answer of String and int value
+        String ans = intentReceived.getStringExtra("Answer");
+        int ansInt = intentReceived.getIntExtra("Answer", -1);
+
+        if (ans.isEmpty()) { //if answer is int value / not String value
+            tvAnswer.setText(questionsSelected + " answer is: " + ansInt);
+        } else { //if answer is String value
+            tvAnswer.setText(questionsSelected + " answer is: " + ans);
+        }
+
+
 
 
     }
